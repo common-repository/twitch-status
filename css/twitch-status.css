@@ -1,0 +1,215 @@
+span.twitch-status-tag {
+	display: inline-block;
+	text-decoration: none;
+}
+
+iframe.twitch-player {
+	width: 100%;
+}
+
+iframe.twitch-chat {
+	width: 100%;
+	min-height: 480px;
+}
+
+.twitch-player-container:after {
+	clear: both;
+	display: block;
+	content: ' ';
+}
+
+.twitch-player-container .twitch-player-col,
+.twitch-player-container .twitch-chat-col {
+	width: 100%;
+	float: none;
+	margin-left: 0;
+}
+
+.twitch-player-container.with-chat .twitch-player-col {
+	width: 66%;
+	float: left;
+}
+
+.twitch-player-container.with-chat .twitch-chat-col {
+	width: 33%;
+	float: left;
+	margin-left: 1%;
+}
+
+.twitch-player-container.with-chat.narrow-player .twitch-player-col,
+.twitch-player-container.with-chat.narrow-player .twitch-chat-col {
+	width: 100%;
+	float: none;
+	margin-left: 0;
+}
+
+.twitch-player-container.with-chat.narrow-player .twitch-chat-col {
+	margin-left: 0;
+	margin-top: .5em;
+}
+
+.twitch-thumbnail-image, .twitch-offline-image {
+	overflow: hidden;
+}
+
+.twitch-thumbnail-image img, .twitch-offline-image img {
+	width: 100%;
+}
+
+.twitch-viewers, .twitch-followers {
+	float: right;
+	margin-left: .5em;
+}
+
+.twitch-offline-caption, .twitch-play-button {
+	position: relative;
+	text-align: center;
+	color: #FFFFFF;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+	font-size: 3em;
+}
+
+.twitch-offline-caption {
+	font-weight: bold;
+	font-size: 2em;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.twitch-play-button {
+	cursor: pointer;
+}
+
+.twitch-channel-topic {
+	font-weight: bold;
+}
+
+.twitch-game {
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+.twitch-game a {
+	font-style: normal;
+	text-decoration: underline;
+}
+
+body .twitch-preview-offline a,
+body .twitch-preview-offline a:hover {
+	text-decoration: none;
+}
+
+.twitch-online:before, .twitch-offline:before, .twitch-play-button:before, .twitch-viewers:before, .twitch-followers:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.twitch-online:before {
+	content: '\e800';
+	color: red;
+
+	-webkit-animation-name: twitch-blinker;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+
+	-moz-animation-name: twitch-blinker;
+	-moz-animation-duration: 1s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+
+	animation-name: twitch-blinker;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.twitch-offline:before {
+	content: '\e806';
+	color: #BBB
+}
+
+.twitch-play-button:before {
+	content: '\e803';
+	color: #BBB;
+}
+.twitch-play-button:hover:before {
+	content: '\e803';
+	color: #FFF;
+}
+
+.twitch-viewers:before {
+	content: '\e807';
+}
+
+.twitch-followers:before {
+	content: '\e801';
+}
+
+.twitch-online {
+	font-weight: bold;
+	color: #FFF;
+	background-color: #000;
+	margin-left: .5em;
+	line-height: 1em;
+	padding: 4px;
+
+	border: 1px solid #FFFFFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.twitch-offline {
+	font-weight: normal;
+	margin-left: .5em;
+	line-height: 1em;
+	color: #BBB;
+}
+
+.twitch-is-online {display:none}
+.twitch-is-offline {display:none}
+.twitch-is-loading {}
+
+@-moz-keyframes twitch-blinker {
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes twitch-blinker {
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+
+@keyframes twitch-blinker {
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
